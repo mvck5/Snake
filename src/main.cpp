@@ -108,10 +108,6 @@ int main() {
 			snake.changeDir(c);
 			time.end();
 		}
-		if (c == 'q') {
-			printw("You quit");
-			break;
-		}	
 		if (c == 'p') {
 			mvprintw(0,0,"Paused      ");
 			c = -1;
@@ -121,7 +117,15 @@ int main() {
 					mvprintw(0,0,"Unpaused    ");
 					break;
 				}
+				if (c == 'q') {
+					printw("You quit");
+					break;
+				}
 			}
+		}
+		if (c == 'q') {
+			printw("You quit");
+			break;
 		}
 		if (snake.checkWon()) {
 			printw("You won");

@@ -121,11 +121,9 @@ bool Snake::checkDead() {
 		return true;
 	}
 
-	for (int i{ 1 };i < m_body.size();i++) {
-		for (int j{ 0 };j < m_body.size()-i;j++) {
-			if (m_body[j] == m_body[j+i]) {
-				return true;
-			}
+	for (int i{ 0 }; i < m_body.size()-1; i++) {
+		if (m_body[0] == m_body[i+1]) {
+			return true;
 		}
 	}
 
