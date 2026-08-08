@@ -11,8 +11,9 @@ Apple::Apple(WINDOW* win, Snake& snake, char image):
 }
 
 void Apple::newPos() {
-	bool allowed{ true };
+	bool allowed;
 	do {
+		allowed = true;
 		m_pos = Point2d(Random::get(1, m_xMax-2), Random::get(1, m_yMax-2));
 		for (Point2d point : m_snake.getBody()) {
 			if (m_pos == point) {
@@ -20,7 +21,7 @@ void Apple::newPos() {
 				break;
 			}
 		}
-	} while (!allowed); // makess sure apple doesn't spawn in snakes body
+	} while (!allowed); // makes sure apple doesn't spawn in snakes body
 	
 }
 
